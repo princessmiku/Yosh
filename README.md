@@ -1,5 +1,5 @@
 # Yosh
-a python data saving system
+a python data saving system, save what you need
 
 
 Not use "@" and "=" as keys, category or values
