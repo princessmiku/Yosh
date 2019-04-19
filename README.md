@@ -6,6 +6,8 @@ Not use "@" and "=" as keys, category or values
 Using comming soon
 
 ## Setup
+    drag and drop the file to your Python Project
+
     import YoshData
 
     With file
