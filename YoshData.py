@@ -13,9 +13,15 @@ class file:
     def __init__(self, file: str = None, string: str = None):
         if file.endswith(".yosh") and file is not None:
             self.file = file
-            op = open(file)
-            f = op.read().split("\n")
-            op.close()
+            try:
+                op = open(file)
+                f = op.read().split("\n")
+                op.close()
+            except FileNotFoundError:
+                fi = open(file, mode="w")
+                fi.write("")
+                fi.close()
+                f = ""
             self.isFile = True
         elif string is not None:
             f = str
@@ -47,7 +53,11 @@ class file:
         self.data = d
 
     def add(self, key: str, category: str, value: str):
-        self.data[key][category] = value
+        try:
+            self.data[key][category] = value
+        except KeyError:
+            self.data[key] = {}
+            self.data[key][category] = value
 
     def write(self, key: str, category: str, value: str):
         if not self.isFile:
