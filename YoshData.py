@@ -1,3 +1,6 @@
+"""
+Github Link: https://github.com/princessmiku/Yosh
+"""
 import sys
 from colorama import Fore, Back, Style
 
